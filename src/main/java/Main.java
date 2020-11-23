@@ -9,12 +9,14 @@ import java.net.URL;
 
 public class Main {
 
+    //Симуляция координат(потом буду брать с GPS)
     private static String x = "55.638083";
     private static String y = "37.327853";
 
+    //Вытягивание странички по координатам, если ввести напрямую в браузер, то выдает нужную область
     private static Document getPage(String x, String y) throws IOException {
-        //String url = "https://yandex.ru/maps/213/moscow/search/остановка/?ll="+ y +"%2C"+ x +"&sll="+ y +"%2C"+ x +"&sspn=0.001392%2C0.000460&z=21";
-        String url = "https://ru.ebay.com/b/Chaises/38208/bn_1519952";
+        String url = "https://yandex.ru/maps/213/moscow/search/остановка/?ll="+ y +"%2C"+ x +"&sll="+ y +"%2C"+ x +"&sspn=0.001392%2C0.000460&z=21";
+        //String url = "https://ru.ebay.com/b/Chaises/38208/bn_1519952";
         Document page = Jsoup.connect(url)
                 //.userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.77 YaBrowser/20.11.0.817 Yowser/2.5 Safari/537.36")
                 .userAgent("Mozilla")
